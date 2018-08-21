@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2018 �?08 �?21 �?05:46
+-- 生成日期: 2018 �?08 �?21 �?08:58
 -- 服务器版本: 5.5.53
 -- PHP 版本: 7.2.1
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `bg_article` (
   `article_stats` int(11) NOT NULL DEFAULT '1' COMMENT '0为冻结',
   `article_push` int(11) NOT NULL DEFAULT '0' COMMENT '推荐栏目,1为开启',
   PRIMARY KEY (`article_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章表' AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章表' AUTO_INCREMENT=68 ;
 
 --
 -- 转存表中的数据 `bg_article`
@@ -60,7 +60,8 @@ INSERT INTO `bg_article` (`article_id`, `article_name`, `article_asname`, `type_
 (60, '标签测试修改', '标签测试修改', '8', 1, '2018-07-23 17:44:38', '7', '1', 50, '标签测试修改', 1, 0),
 (61, '测试一下栏目显示', '测试一下栏目显示', '8', 1, '2018-07-24 15:13:05', '29', '3', 60, '测试一下栏目显示', 1, 0),
 (62, '测试文章图片', '测试文章图片', '9.2', 1, '2018-07-27 09:57:28', '66', '5', 50, '测试文章图片', 1, 1),
-(66, '从windows上把thinkphp项目移动到linux下', 'thinkphp上传linux的注意事项', '8.1', 1, '2018-08-04 09:48:30', '17', '3', 100, 'Linux、php', 1, 1);
+(66, '从windows上把thinkphp项目移动到linux下', 'thinkphp上传linux的注意事项', '8.1', 1, '2018-08-04 09:48:30', '17', '3', 100, 'Linux、php', 1, 1),
+(67, 'GIT分支系统的使用', 'git分支系统', '8.1', 1, '2018-08-21 16:47:39', '1', '0', 50, 'git、远程分支、github', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `bg_article_describe` (
   `addtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`describe_id`),
   KEY `article_id` (`article_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章内容表' AUTO_INCREMENT=61 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章内容表' AUTO_INCREMENT=62 ;
 
 --
 -- 转存表中的数据 `bg_article_describe`
@@ -97,7 +98,8 @@ INSERT INTO `bg_article_describe` (`describe_id`, `describe_content`, `describe_
 (56, '<h1>Hello world!标签测试修改标签测试修改标签测试修改标签测试修改</h1>\r\n\r\n<p>I&#39;m an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>\r\n', '标签测试修改标签测试修改标签测试修改标签测试修改', 0, '0000-00-00 00:00:00', '标签测试修改', 60, '2018-07-23 09:44:38'),
 (57, '<h1>Hello world!测试一下栏目显示测试一下栏目显示测试一下栏目显示测试一下栏目显示</h1>\r\n\r\n<p>I&#39;m an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>\r\n', '测试一下栏目显示测试一下栏目显示测试一下栏目显示', 0, '0000-00-00 00:00:00', '测试宝宝', 61, '2018-07-24 07:13:05'),
 (58, '<h1>Hello world!<a href="../file/upload/images.jpg"><img alt="" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1532673839477&amp;di=9af29f74a10a0370311f8b30024ee712&amp;imgtype=0&amp;src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F960a304e251f95ca50958c64c5177f3e660952fb.jpg" /></a></h1>\r\n\r\n<p>I&#39;m an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>\r\n', '										测试文章图片测试文章图片测试文章图片测试文章图片测试文章图片测试文章图片测试文章图片测试文章图片								', 0, '2018-07-27 11:56:05', '测试', 62, '2018-07-27 01:57:28'),
-(60, '<p>在Windows中的博客上传到linux下</p>\r\n\r\n<p>出现了很多问题.</p>\r\n\r\n<p>在一键安装过lnmp之后需要设置入口文件</p>\r\n\r\n<p>在/uer/nginx/conf/nginx.conf中设置入口文件</p>\r\n\r\n<p>设置入口文件之后进入localhost 成功 但是却显示的为空白页面,没有报错</p>\r\n\r\n<p>经过一系列的查找之后发现是包含thinkphp/base.php出现了问题.</p>\r\n\r\n<p>在网上查找之后知道了php中有个参数 open_basedir 限制目录</p>\r\n\r\n<p>最后发现在/uer/nginx/conf/fastcgi.conf 中 自动生成了一段话,使得出现了限制目录的情况.</p>\r\n\r\n<p>将一切搞定,首页正常显示,但是点击到其他栏目的时候报错404.</p>\r\n\r\n<p>百度之后发现nginx 上是没有phpinfo模式的,需要再配置</p>\r\n\r\n<p>在/uer/nginx/conf/nginx.conf中的server 中添加</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp; location / {</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //如果是资源文件，则不走phpinfo模式</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!-e $request_filename){</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rewrite ^/(.*)$ /index.php?s=$1 last;</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>重启lnmp后 成功,</p>\r\n', '					在Windows中的博客上传到linux下\r\n\r\n会出现很多问题.																																														', 0, '2018-08-04 10:32:56', '作者', 66, '2018-08-04 01:48:30');
+(60, '<p>在Windows中的博客上传到linux下</p>\r\n\r\n<p>出现了很多问题.</p>\r\n\r\n<p>在一键安装过lnmp之后需要设置入口文件</p>\r\n\r\n<p>在/uer/nginx/conf/nginx.conf中设置入口文件</p>\r\n\r\n<p>设置入口文件之后进入localhost 成功 但是却显示的为空白页面,没有报错</p>\r\n\r\n<p>经过一系列的查找之后发现是包含thinkphp/base.php出现了问题.</p>\r\n\r\n<p>在网上查找之后知道了php中有个参数 open_basedir 限制目录</p>\r\n\r\n<p>最后发现在/uer/nginx/conf/fastcgi.conf 中 自动生成了一段话,使得出现了限制目录的情况.</p>\r\n\r\n<p>将一切搞定,首页正常显示,但是点击到其他栏目的时候报错404.</p>\r\n\r\n<p>百度之后发现nginx 上是没有phpinfo模式的,需要再配置</p>\r\n\r\n<p>在/uer/nginx/conf/nginx.conf中的server 中添加</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp; location / {</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //如果是资源文件，则不走phpinfo模式</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!-e $request_filename){</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rewrite ^/(.*)$ /index.php?s=$1 last;</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>重启lnmp后 成功,</p>\r\n', '					在Windows中的博客上传到linux下\r\n\r\n会出现很多问题.																																														', 0, '2018-08-04 10:32:56', '作者', 66, '2018-08-04 01:48:30'),
+(61, '<p>首先</p>\r\n\r\n<p>$git init</p>\r\n\r\n<p>初始化git仓库</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>$git add 文件 &nbsp; &nbsp;</p>\r\n\r\n<p>上传文件到master分支或者其他分支,</p>\r\n\r\n<p>$git commit -m &quot;版本号&quot;</p>\r\n\r\n<p>-m 是必不可少的一个东西,可以使自己分清楚各个版本,个人喜欢使用时间或者时间+做的事 来进行处理</p>\r\n\r\n<pre>\r\n<code>$ git remote add origin git@github.com:q2694177727/learngit.git</code></pre>\r\n\r\n<p><code>或者</code></p>\r\n\r\n<p><code>$ git remote add origin https://github.com/q2694177727/learngit.git</code></p>\r\n\r\n<p><code>主要部分为 &nbsp; git remote add 远程库名 地址</code></p>\r\n\r\n<p><code>地址可以在github后台那找到</code></p>\r\n\r\n<p><code>之后就可以</code></p>\r\n\r\n<pre>\r\n<code>$ git push -u 远程库名 本地分支名称(</code>master<code>)</code></pre>\r\n\r\n<p><code>-u的作用为把本地分支 与 远程分支关联起来 在以后使用push的时候可以省略掉 &nbsp;直接 git push</code></p>\r\n\r\n<p>git push 中有个额外的参数为 -f 强制上传</p>\r\n\r\n<p>使用这个命令主要是因为 当时更新的时候 git push 报错 ,后来找到了这个命令.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n', '										使用git创建远程仓库，并进行一系列的使用								', 0, '2018-08-21 16:57:43', '作者', 67, '2018-08-21 08:47:39');
 
 -- --------------------------------------------------------
 
@@ -195,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `bg_article_type` (
   `type_color` varchar(20) NOT NULL COMMENT '颜色',
   `type_pic` text NOT NULL COMMENT '在标签栏目中显示的图片',
   PRIMARY KEY (`type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章标签' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章标签' AUTO_INCREMENT=10 ;
 
 --
 -- 转存表中的数据 `bg_article_type`
@@ -207,7 +209,8 @@ INSERT INTO `bg_article_type` (`type_id`, `type_name`, `type_desc`, `addtime`, `
 (4, 'css3', 'css3', '2018-07-23 07:48:23', 'b42562', '20180726\\91b37ebfd19d3487bf7f7cd67e2405b7.jpg'),
 (5, 'JScript', 'JScript', '2018-07-23 07:48:33', '8e3c2e', '20180726\\49e738f939f7b05265ad51478dff7a8e.jpg'),
 (6, '白羊', '白羊', '2018-07-23 07:49:29', 'baccb7', '20180726\\47f69e78964c04fdb8a6042db779b79a.jpg'),
-(8, '天秤', '测试图片效果', '2018-07-25 09:54:05', '5ebc34', '20180726\\d4ca8dc65c6f5a3547f074cf03a57123.jpg');
+(8, '天秤', '测试图片效果', '2018-07-25 09:54:05', '5ebc34', '20180726\\d4ca8dc65c6f5a3547f074cf03a57123.jpg'),
+(9, 'Git', '分支系统', '2018-08-21 08:40:05', 'adc172', '20180821\\dc60c8e66d60e250b85110456c328a59.jpg');
 
 -- --------------------------------------------------------
 
@@ -223,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `bg_article_type_tags` (
   PRIMARY KEY (`tags_id`),
   KEY `article_id` (`article_id`),
   KEY `type_id` (`type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章标签表' AUTO_INCREMENT=73 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='文章标签表' AUTO_INCREMENT=76 ;
 
 --
 -- 转存表中的数据 `bg_article_type_tags`
@@ -246,7 +249,10 @@ INSERT INTO `bg_article_type_tags` (`tags_id`, `article_id`, `type_id`, `creat_t
 (69, 62, 3, '2018-07-27 02:10:58'),
 (70, 62, 6, '2018-07-27 02:15:14'),
 (71, 66, 2, '2018-08-04 01:48:30'),
-(72, 66, 3, '2018-08-04 01:48:30');
+(72, 66, 3, '2018-08-04 01:48:30'),
+(73, 67, 3, '2018-08-21 08:47:39'),
+(74, 67, 8, '2018-08-21 08:47:39'),
+(75, 67, 9, '2018-08-21 08:47:39');
 
 -- --------------------------------------------------------
 

@@ -320,6 +320,7 @@ function IPandADDress(){
     $arr = get_IpAddress();
         //如果失败了则调用淘宝API
     if(!is_array($arr)){
+
         $arr= [];
         $arr['ip'] = getIPaddress();
         $arr['address'] =  taobaoIP($arr['ip']);
