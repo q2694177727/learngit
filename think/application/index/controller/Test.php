@@ -1,10 +1,11 @@
 <?php
 namespace app\index\controller;
 use  \QRcode;
+ use think\Controller, Request, Session, Config, Loader;
 /**
  * 
  */
-class Test
+class Test  extends Controller
 {
 	
 	public function index()
@@ -68,6 +69,15 @@ class Test
 	public function action_redis(){
 		cache('name','laowang');
 		echo cache('name');
+	}
+	public function testJSpost(){
+		$request=Request::instance();
+		$data = $request->post();
+		return $data['login_key'];
+	}
+	public function jump(){
+		abort(200);		
+
 	}
 
 }
