@@ -78,10 +78,10 @@ class Server  extends Controller
         if(empty($file)) {  
             $this->error('请选择上传文件');  
         } 
-        $dir = "/phpStudy/PHPTutorial/WWW/think/public/file/upload";
-        if(!is_dir($dir)){
-			$dir = "/home/wwwroot/default/blog/public/file/upload";
-        }
+        $dir = "./file/upload";
+   //      if(!is_dir($dir)){
+			// $dir = "/home/wwwroot/default/blog/public/file/upload";
+   //      }
         // halt($dir);
         $info = $file->move($dir); 
         // dump($info);

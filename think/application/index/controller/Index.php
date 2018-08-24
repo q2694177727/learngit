@@ -294,8 +294,19 @@ class Index extends Controller
         $alipay['zfb'] = db('pic_dir')->where('pic_type_id',4)->value('pic_dirname');
         $alipay['wx']  = db('pic_dir')->where('pic_type_id',5)->value('pic_dirname');
 
+        // 查看接口的反应速度
+
+        /**
+            经测试  两个接口中的另一个21秒响应时间启用
+        */
+        // $newtime = microtime(true);
+        // echo $newtime;exit;
         //获取IP与地址
-        $ip_arr = get_IpAddress();
+        // $ip_arr = get_IpAddress();
+        //运行之后的时间
+        // $outtime = microtime(true);
+        // $time[0] = $outtime-$newtime;
+        // echo $time;
         //获取留言表内容
         $message = db('message_content')->where('article_id',$id)->where('content_state',1)->select();
         //获取留言表回复的内容
@@ -314,8 +325,9 @@ class Index extends Controller
         // halt($message);
 
 
+        // exit;
         $this->assign('message',$message);
-        $this->assign('ip',$ip_arr);
+        // $this->assign('ip',$ip_arr);
         $this->assign('alipay',$alipay);
         $this->assign('tag',$tags);
         return view();

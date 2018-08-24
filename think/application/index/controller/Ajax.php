@@ -13,8 +13,10 @@ class Ajax extends Controller
     */
     public function updown($id){
         //调用别人的接口
+        // $time1 = microtime(true);
         $arr = IPandADDress();
-        
+        // $time2 = microtime(true);
+        // $time = [];
 
         
         // halt($arr);
@@ -38,11 +40,15 @@ class Ajax extends Controller
 
             //返回值
             $res = ['success'=>$down+1];
-
-
+        // $time3 = microtime(true);
+        
+        // $time[] = $time3-$time2;
         }else{
             $res = ['error'=>"已经点过赞了!"];
         }
+        // $time[] = $time2-$time1;
+        // halt($time);
+
         return $res;
     }
 

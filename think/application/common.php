@@ -240,6 +240,7 @@ function page_arr($arr,$limit=10,$page=1){
 
 
 //获取IP与地址
+//21.607235908508秒  太慢所以弃用
 function get_IpAddress(){
             $host = "http://ip.chinaz.com/getip.aspx";
             $method = "GET";
@@ -317,13 +318,20 @@ function taobaoIP($clientIP){
 
 //对两个查找IP的接口进行整合
 function IPandADDress(){
-    $arr = get_IpAddress();
-        //如果失败了则调用淘宝API
-    if(!is_array($arr)){
+    // $time1 = microtime(true);
+    // $arr = get_IpAddress();
+    // $time2 = microtime(true); 
+    // $time = [];
+    // $time[]=$time2-$time1; //21.607235908508秒  太慢所以弃用
+    //     //如果失败了则调用淘宝API
+    // if(!is_array($arr)){
 
         $arr= [];
         $arr['ip'] = getIPaddress();
         $arr['address'] =  taobaoIP($arr['ip']);
-    }
+        // $time3 = microtime(true);
+        // $time[]=$time3-$time2;
+    // }
+    // halt($time);
     return $arr;
 }
