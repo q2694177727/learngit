@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- 'http://minmai.xijiakei.com/index/login/do_login.html' -->
+<button onclick="doPost('{:url('test/testJSpost')}')">123</button>
+
+<script type="text/javascript" src="../..\folder\js\jquery.min.js"></script>
+<script>
+	// let name="小王",age="18",sex="男";
+	// const map =new Map([['name1','name5'],['小王','小小王']],['name2','李四'],['name3','王五']);
+	// console.log(map);
+
+function doPost(url,callback){
+	var var1="老王";
+	var var2="老张";
+	alert('abc');
+	$.post(url,{'login_key':'minmaijituan666','login_name':'john','login_passwd':'qaz123'})
+	// window.location.href =callback;
+}
+
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{include file="index/header" /}
+<div class="pagebg sh"></div>
+<div class="container">
+   <h1 class="t_nav"><span>
+    {$col.column_desc}
+</span>
+
+<a href="{:url('index/index')}" class="n1">网站首页</a>
+
+  <a href="{:url('index/tags')}?column_id={$col.column_id}" class="n2">{$col.column_name}</a>
+  <a href="{:url('index/tags_list')}?tags={$page.tags}" class="n1">{$col.column_tags_name}</a>
+
+</h1>
+
+   
+
+<div class="share">
+<ul>
+{volist name="article" id="vo"}
+ <li> <div class="shareli"><a href="{:url('index/info')}?id={$vo.article_id}" target="_blank"> <i><img src="/file/upload/{$vo.pic_dir}"></i>
+      <h2><b>{$vo.article_name}</b></h2>
+      <span>喜欢 | {$vo.down}</span> </a></div> </li>
+{/volist}
+
+</ul>
+</div>
+
+<div class="pagelist"><a title="Total record">&nbsp;<b>共{$page.count}条</b> </a>&nbsp;&nbsp;&nbsp;
+
+
+  <a href="{:url('index/tags_list')}?page=1&tags={$page.tags}">首页</a>&nbsp;
+  <a href="{:url('index/tags_list')}?page={$page.prev}&tags={$page.tags}">上一页</a>&nbsp;
+  {for start="1" end="$page.totalpage+1"}
+    <a href="{:url('index/tags_list')}?page={$i}&tags={$page.tags}">{$i}</a>&nbsp;
+  {/for}
+  
+
+  <a href="{:url('index/tags_list')}?page={$page.next}&tags={$page.tags}">下一页</a>&nbsp;
+
+  <a href="{:url('index/tags_list')}?page={$page.totalpage}&tags={$page.tags}">尾页</a>
+
+</div>
+
+</div>
+{include file="index/footer"}

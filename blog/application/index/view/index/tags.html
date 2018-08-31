@@ -1,0 +1,52 @@
+{include file="index/header" /}
+<div class="pagebg sh"></div>
+<div class="container">
+  <h1 class="t_nav"><span>
+  {if $col.col_out==1 }
+    {$col.column_out_desc}
+    {else/}
+    {$col.column_desc}
+  {/if} 
+</span>
+
+<a href="{:url('index/index')}" class="n1">网站首页</a>
+{if $col.col_out==1}
+  <a href="{:url('jump/index')}?tags={$col.column_tags}&column_id={$col.column_id}" class="n2">{$col.column_name}</a>
+  <a href="{:url('jump/index')}?tags={$col.column_out_tags}&column_id={$col.column_out_id}" class="n1">{$col.column_out_name}</a>
+{else/}
+    <a href="{:url('jump/index')}?tags={$col.column_tags}&column_id={$col.column_id}" class="n2">{$col.column_name}</a>
+{/if}
+</h1>
+
+<div class="share">
+
+<ul>
+
+  {volist name="type" id="vo"}
+      <li> <div class="shareli"><a href="{:url('index/tags_list')}?tags={$vo.type_id}" target="_blank"> <i><img src="/file/upload/{$vo.type_pic}"></i>
+      <h2><b>{$vo.type_desc}</b></h2>
+      <span style="background: #{$vo.type_color}">{$vo.type_name}</span> </a></div> </li>
+  {/volist}
+ 
+</ul>
+</div>
+
+<div class="pagelist"><a title="Total record">&nbsp;<b>共{$page.count}条</b> </a>&nbsp;&nbsp;&nbsp;
+
+
+  <a href="{:url('index/tags')}?page=1&column_id={$page.column_id}">首页</a>&nbsp;
+  <a href="{:url('index/tags')}?page={$page.prev}&column_id={$page.column_id}">上一页</a>&nbsp;
+  {for start="1" end="$page.totalpage+1"}
+    <a href="{:url('index/tags')}?page={$i}&column_id={$page.column_id}">{$i}</a>&nbsp;
+  {/for}
+  
+
+  <a href="{:url('index/tags')}?page={$page.next}&column_id={$page.column_id}">下一页</a>&nbsp;
+
+  <a href="{:url('index/tags')}?page={$page.totalpage}&column_id={$page.column_id}">尾页</a>
+
+</div>
+
+
+</div>
+{include file="index/footer"}

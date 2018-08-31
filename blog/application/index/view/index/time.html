@@ -1,0 +1,48 @@
+{include file="index/header" }
+<div class="pagebg timer"> </div>
+<div class="container">
+  <h1 class="t_nav"><span>{$tags.column_desc}</span><a href="{:url('index/index')}" class="n1">首页</a><a href="{:url('jump/index')}?tags={$tags.column_tags}" class="n2">{$tags.column_name}</a></h1>
+  <div class="timebox">
+  <ul id="list" style="display:none;">
+    {volist name="$article" id="vo"}
+      <li><span>{$vo.add_time}</span><a href="{:url('index/info')}?id={$vo.article_id}" title="{$vo.article_name}">{$vo.article_name}</a></li>
+    {/volist}
+  </ul>
+  <ul id="list2">
+    {volist name="$article" id="vo"}
+      <li><span>{$vo.add_time}</span><a href="{:url('index/info')}?id={$vo.article_id}" title="{$vo.article_name}">{$vo.article_name}</a></li>
+    {/volist}
+    
+    <div class="pagelist"><a class="allpage"><b>共{$total.count}条</b></a>&nbsp;&nbsp;
+      {eq name="$total.limit" value="1"} 
+      <a href="{:url('index/time')}?page={$total.pvre}&limit={$total.limits}" >上一页</a>
+      {else/}
+      <a href="{:url('index/time')}?page={$total.pvre}" >上一页</a>
+      {/eq}
+        {for start="1" end="$total.totalpage+1"}
+          {eq name="$total.limit" value="1"}
+            {if $total.nows == $i}
+              <a href="{:url('index/time')}?page={$i}&limit={$total.limits}" class="curPage">{$i}</a>&nbsp;&nbsp;
+            {else/}
+              <a href="{:url('index/time')}?page={$i}&limit={$total.limits}" >{$i}</a>&nbsp;&nbsp;
+            {/if}
+          {else/}
+            {if $total.nows == $i}
+              <a href="{:url('index/time')}?page={$i}" class="curPage">{$i}</a>&nbsp;&nbsp;
+            {else/}
+              <a href="{:url('index/time')}?page={$i}" >{$i}</a>&nbsp;&nbsp;
+            {/if}
+          {/eq}
+        {/for}
+      
+      
+      {eq name="$total.limit" value="1"} 
+      <a href="{:url('index/time')}?page={$total.next}&limit={$total.limits}" >下一页</a>
+      {else/}
+      <a href="{:url('index/time')}?page={$total.next}" >下一页</a>
+      {/eq}
+      </div></ul>
+  <!-- <script src="../folder/js/page2.js"></script>  -->
+  </div>
+</div>
+{include file="index/footer" }
