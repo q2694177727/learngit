@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+<body>
+<!-- 数据的显示-->
+<!--使用情况：在列表中的一些数据显示 -->
+	<div class="lunbo">
+	{{message}}
+		<li v-for="item in message" :model="message" >
+		{{item.name}}
+		</li>
+
+
+	</div>
+<button onClick="updata()">更新数据</button>	
+<!-- 数据的显示-->
+
+
+<div id="app" class="login_area">
+    <div class="form_line">
+        <label>用户名:</label>
+        <input v-model="info.name" placeholder="请输入用户名" />
+        <!-- {{info.name}} -->
+    </div>
+    <div class="form_line">
+        <label>密码:</label>
+        <!-- {{info.passw}} -->
+        <input v-model="info.passw" placeholder="请输入密码" />
+    </div>
+</div>
+<script type="text/javascript">
+var app = new Vue({
+    el: '#app',
+    data: {
+        info: {
+            name: '123', // 用户名
+            passw: '456' // 密码
+        },
+    },
+    watch: {
+        info: {  // 这监听对象值的改变 和上面的不一样。
+            handler(curVal,oldVal){
+                console.log(curVal);
+            },
+            deep: true, 
+        },
+    },
+})
+</script>
+
+
+</body>
+<!-- 数据的显示-->
+		<script type="text/javascript">
+
+	
+	$.ajax({
+		url:"{:url('vue/test_for')}",
+		type:'GET',
+		success:function(data,success){
+			var vm = new Vue({
+		el:'.lunbo',
+		data:{
+			message:data.data,
+		},
+		})
+
+		},
+		error:function(){
+ 			alert(data)
+		}
+
+	});
+	// var a = 'test',
+		
+	function updata(){
+	$.ajax({
+		url:"{:url('vue/test_fors')}",
+		type:'GET',
+		success:function(data,success){
+			var vm = new Vue({
+		el:'.lunbo',
+		data:{
+			message:data.data,
+		},
+		message:{
+			
+		}
+				
+
+		});
+
+		},
+		error:function(){
+ 			alert(data)
+		}
+
+	});
+
+	}	
+</script>
+<!-- 数据的显示-->
+</html>

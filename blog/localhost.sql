@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2018 �?08 �?31 �?03:32
+-- 生成日期: 2018 �?08 �?31 �?08:39
 -- 服务器版本: 5.5.53
 -- PHP 版本: 7.2.1
 
@@ -60,9 +60,9 @@ INSERT INTO `bg_article` (`article_id`, `article_name`, `article_asname`, `type_
 (60, '标签测试修改', '标签测试修改', '8', 1, '2018-07-23 17:44:38', '8', '1', 50, '标签测试修改', 1, 0),
 (61, '测试一下栏目显示', '测试一下栏目显示', '8', 1, '2018-07-24 15:13:05', '30', '3', 60, '测试一下栏目显示', 1, 0),
 (62, '测试文章图片', '测试文章图片', '9.2', 1, '2018-07-27 09:57:28', '67', '5', 50, '测试文章图片', 1, 1),
-(66, '从windows上把thinkphp项目移动到linux下', 'thinkphp上传linux的注意事项', '8.1', 1, '2018-08-04 09:48:30', '30', '4', 100, 'Linux、php', 1, 1),
-(67, 'GIT分支系统的使用', 'git分支系统', '8.1', 1, '2018-08-21 16:47:39', '7', '0', 50, 'git、远程分支、github', 1, 1),
-(68, '数据库设计与基础', '数据库', '8.1', 1, '2018-08-31 11:04:24', '0', '0', 50, '数据库', 1, 1),
+(66, '从windows上把thinkphp项目移动到linux下', 'thinkphp上传linux的注意事项', '8.1', 1, '2018-08-04 09:48:30', '31', '4', 100, 'Linux、php', 1, 1),
+(67, 'GIT分支系统的使用', 'git分支系统', '8.1', 1, '2018-08-21 16:47:39', '9', '0', 50, 'git、远程分支、github', 1, 1),
+(68, '数据库设计与基础', '数据库', '8.1', 1, '2018-08-31 11:04:24', '2', '0', 50, '数据库', 1, 1),
 (69, 'VUE的学习时的心得与问题', 'VUE初学者', '8', 1, '2018-08-31 11:09:57', '2', '1', 50, 'VUE，JS', 1, 1),
 (70, '日常的一些问题与处理方式', '日常的问题', '9.2', 1, '2018-08-31 11:29:03', '0', '0', 50, '日常', 1, 1);
 
@@ -104,7 +104,7 @@ INSERT INTO `bg_article_describe` (`describe_id`, `describe_content`, `describe_
 (60, '<p>在Windows中的博客上传到linux下</p>\r\n\r\n<p>出现了很多问题.</p>\r\n\r\n<p>在一键安装过lnmp之后需要设置入口文件</p>\r\n\r\n<p>在/uer/nginx/conf/nginx.conf中设置入口文件</p>\r\n\r\n<p>设置入口文件之后进入localhost 成功 但是却显示的为空白页面,没有报错</p>\r\n\r\n<p>经过一系列的查找之后发现是包含thinkphp/base.php出现了问题.</p>\r\n\r\n<p>在网上查找之后知道了php中有个参数 open_basedir 限制目录</p>\r\n\r\n<p>最后发现在/uer/nginx/conf/fastcgi.conf 中 自动生成了一段话,使得出现了限制目录的情况.</p>\r\n\r\n<p>将一切搞定,首页正常显示,但是点击到其他栏目的时候报错404.</p>\r\n\r\n<p>百度之后发现nginx 上是没有phpinfo模式的,需要再配置</p>\r\n\r\n<p>在/uer/nginx/conf/nginx.conf中的server 中添加</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp; location / {</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //如果是资源文件，则不走phpinfo模式</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!-e $request_filename){</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rewrite ^/(.*)$ /index.php?s=$1 last;</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n\r\n<p>&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>重启lnmp后 成功,</p>\r\n', '					在Windows中的博客上传到linux下\r\n\r\n会出现很多问题.																																														', 0, '2018-08-04 10:32:56', '作者', 66, '2018-08-04 01:48:30'),
 (61, '<p>首先</p>\r\n\r\n<p>$git init</p>\r\n\r\n<p>初始化git仓库</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>$git add 文件 &nbsp; &nbsp;</p>\r\n\r\n<p>上传文件到master分支或者其他分支,</p>\r\n\r\n<p>$git commit -m &quot;版本号&quot;</p>\r\n\r\n<p>-m 是必不可少的一个东西,可以使自己分清楚各个版本,个人喜欢使用时间或者时间+做的事 来进行处理</p>\r\n\r\n<pre>\r\n<code>$ git remote add origin git@github.com:q2694177727/learngit.git</code></pre>\r\n\r\n<p><code>或者</code></p>\r\n\r\n<p><code>$ git remote add origin https://github.com/q2694177727/learngit.git</code></p>\r\n\r\n<p><code>主要部分为 &nbsp; git remote add 远程库名 地址</code></p>\r\n\r\n<p><code>地址可以在github后台那找到</code></p>\r\n\r\n<p><code>之后就可以</code></p>\r\n\r\n<pre>\r\n<code>$ git push -u 远程库名 本地分支名称(</code>master<code>)</code></pre>\r\n\r\n<p><code>-u的作用为把本地分支 与 远程分支关联起来 在以后使用push的时候可以省略掉 &nbsp;直接 git push</code></p>\r\n\r\n<p>git push 中有个额外的参数为 -f 强制上传</p>\r\n\r\n<p>使用这个命令主要是因为 当时更新的时候 git push 报错 ,后来找到了这个命令.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n', '										使用git创建远程仓库，并进行一系列的使用								', 0, '2018-08-21 16:57:43', '作者', 67, '2018-08-21 08:47:39'),
 (62, '<p>数据表设计的想法：</p>\r\n\r\n<p>有关超级管理员、后台管理员的数据表设计的想法</p>\r\n\r\n<p>管理员类型表：admin_type管理员的类型， 一个总的类型&nbsp; 。</p>\r\n\r\n<p>管理员权限表：admin_right管理员的权利类型，一些数字，与权限表相对应，并添加管理员类型ID 与之对应。</p>\r\n\r\n<p>权限表： admin_right_list有关于的各个栏目的权利，增删改查方面的权利，可以通过上面的管理员权限表来筛选出管理员的权限，判断是否能操作，如果不能操作，不予以显示列表。此表除了关联栏目表ID外还可以有 操作方法名称 例如 ： admin/del&nbsp; &nbsp; （管理员删除） 此类的字段。</p>\r\n\r\n<p>管理员表：最终的表，有个管理员类型ID。通过管理员类型可以知道他有什么权限ID（权限表），再通过权限表ID 查找权限表，找到对应的 名称（栏目名称字段），然后给予显示。</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>根据后台的需求来选择如何去做，上述的只是后台列表的权限，关于前台的栏目的设置根据客户的需求&nbsp; 再次调整。</p>\r\n\r\n<p>&nbsp;</p>\r\n', '数据库数据表的设计与优化', 0, '0000-00-00 00:00:00', '作者', 68, '2018-08-31 03:04:24'),
-(63, '<h1>看VUE官网初级教程中ing。。。</h1>\r\n', '在2018-08-30晚，与阿星哥的交流后，本来就对VUE有一定向往的我爆发了学习的兴趣。之前的时候，就知道JS这个语言是特别棒的，而且生命周期会比PHP长，而且JS的使用很有趣，也很全面。因为星哥说过VUE是小轿车，而JQ等语言是自行车，所以JS的学习，着重点就放到了VUE上。', 0, '0000-00-00 00:00:00', '作者', 69, '2018-08-31 03:09:57'),
+(63, '<h1>看VUE官网初级教程中ing。。。</h1>\r\n\r\n<p>2018-08-31&nbsp;</p>\r\n\r\n<p>vue加jq 的ajax显示&nbsp; ，缺陷：只显示一次，需要动态调用。缺少监听器。</p>\r\n\r\n<p>在别人那复制了一份监听器的代码，主要作用为动态获取input中写入的数据。</p>\r\n', '										在2018-08-30晚，与阿星哥的交流后，本来就对VUE有一定向往的我爆发了学习的兴趣。之前的时候，就知道JS这个语言是特别棒的，而且生命周期会比PHP长，而且JS的使用很有趣，也很全面。因为星哥说过VUE是小轿车，而JQ等语言是自行车，所以JS的学习，着重点就放到了VUE上。								', 0, '2018-08-31 16:10:53', '作者', 69, '2018-08-31 03:09:57'),
 (64, '<p>2018-08-31</p>\r\n\r\n<p>在今天，使用thinkphp上传文章之后，突然看到了IP，联想到了正在操作的服务器，自己的有个点赞按钮，使用的ajax。就想测试一样这个IP为什么。在点击点赞后，ajax返回了一堆代码，显然失败了，经过调查，发现在使用model的时候，get获取到后，通过 $data-&gt;点赞量=点赞量+1；&nbsp; 然后再save（）会报错，经过一步一步的检查，发现save（）这一步报错了，报错，不支持redis。 尽管很奇怪为什么数据库操作使用到了 cache 但是还是 通过config 中的 cache.php 文件修改回了file驱动方式，之后正常。</p>\r\n', '将一些日常问题列到这里', 0, '0000-00-00 00:00:00', '作者', 70, '2018-08-31 03:29:03');
 
 -- --------------------------------------------------------
@@ -440,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `bg_message_content` (
   `message_ress` varchar(30) NOT NULL COMMENT '地址',
   PRIMARY KEY (`content_id`),
   KEY `article_id` (`article_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='留言内容表' AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=gbk COMMENT='留言内容表' AUTO_INCREMENT=23 ;
 
 --
 -- 转存表中的数据 `bg_message_content`
@@ -463,7 +463,9 @@ INSERT INTO `bg_message_content` (`content_id`, `member_id`, `floor_id`, `reply_
 (17, 0, 1, 0, '<p>\r\n	linux下的路径以"/"隔开 但是windows中的路径以\\隔开,对于unlink或者require 中使用路径需要注意,如果使用错误则会出现&nbsp; 名为abc/123.txt的文件\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '2018-08-04 03:13:28', 1, 66, '112.231.81.160', '山东省济南市 联通'),
 (18, 0, 2, 0, '当把文件上传至虚拟主机上时出现了两个问题,其中一个就是文件被识别了,但是什么都不会显示,后来发现是命名空间的问题. php版本太低不支持DIR与命名空间,在之后就是 mkdir() 的问题, thinkphp会自动在访问的时候 在runtime/temp目录下生成缓存文件,但是runtime目录的文件权限就是个问题,实际上他需要 777 的权限, 注意一点就是他不知755权限.会报错,在虚拟机上实测。<br />', '2018-08-15 01:51:08', 1, 66, '112.230.249.220', '山东省济南市 联通'),
 (19, 0, 3, 0, '<p>\r\n	首先是路径的问题 , server 上传图片类的路径为 ./upload/file/ &nbsp; 之前为绝对路径 , 之后注意使用相对路径来进行操作,否则在更改位置的时候会出现很大的问题.\r\n</p>\r\n<p>\r\n	再有就是一个IP的接口,贼慢 &nbsp;, 响应时间为21秒 , 故弃用, 之后页面速度提高.&nbsp;\r\n</p>', '2018-08-24 08:21:31', 1, 66, '127.0.0.1', 'XX内网IP'),
-(20, 0, 4, 0, '可能是因为在虚拟机使用时 是最新的数据库 mysql8.0 所以在更新与添加的时候 会提示不存在一个字段的值, 之后的项目中,一些增删改查 直接定义为一个类, 然后给那些字段赋初始值 (为空) , 可以解决这个问题&nbsp;', '2018-08-24 08:24:14', 1, 66, '127.0.0.1', 'XX内网IP');
+(20, 0, 4, 0, '可能是因为在虚拟机使用时 是最新的数据库 mysql8.0 所以在更新与添加的时候 会提示不存在一个字段的值, 之后的项目中,一些增删改查 直接定义为一个类, 然后给那些字段赋初始值 (为空) , 可以解决这个问题&nbsp;', '2018-08-24 08:24:14', 1, 66, '127.0.0.1', 'XX内网IP'),
+(21, 0, 1, 0, '<p>\r\n	git&nbsp; 的分支的合并，merge 合并两个分支。 然后pull。&nbsp;\r\n</p>\r\n<p>\r\n	git中&nbsp; push 的用法，&nbsp; push&nbsp; 远程仓库&nbsp; &nbsp;本地分支名 ： 远程分支名&nbsp;&nbsp;\r\n</p>\r\n<p>\r\n	如果远程分支不存在，则创建远程分支。\r\n</p>', '2018-08-31 08:14:02', 1, 67, '127.0.0.1', 'XX内网IP'),
+(22, 0, 1, 0, '<p style="text-align:left;">\r\n	<span style="font-size:16px;">在喜居时听到 java的处理高并发的方法。</span>\r\n</p>\r\n<p style="text-align:left;">\r\n	<span style="font-size:16px;">类似于一个抢购的场景，只有一人能得到这个东西，当有一个人点击支付的时候，会从redis中取出一条token，然后跳转到支付页面，然后在数据库中添加一条订单，token只有一条，且是唯一存在的，当有人取走了这一条token，则别人进不去支付页面（因为redis中只有一条token，取不出来就进不去支付），假如，两个人同时取到了这一条token，那么则在添加订单的时候给数据库上锁，当上锁之后，第二条的添加token重复，则添加不上。</span>\r\n</p>\r\n<p style="text-align:left;">\r\n	<span style="font-size:16px;">之后就是支付页面的回调。</span>\r\n</p>', '2018-08-31 08:38:30', 1, 68, '127.0.0.1', 'XX内网IP');
 
 -- --------------------------------------------------------
 

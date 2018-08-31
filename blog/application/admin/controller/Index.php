@@ -17,7 +17,7 @@ class Index  extends Controller
 		}
 		$time = time()-session('time');
 		//判断是否登录未动作超时
-		$overtime = 9999999;//单位秒,未行动时间
+		$overtime = 3600;//单位秒,未行动时间
 		if( $time > $overtime ){
 			$this->redirect('login/');
 		}else{
