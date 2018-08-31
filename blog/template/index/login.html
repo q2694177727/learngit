@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{margin: 0 auto;padding: 0;}
+		body{width: 100%;
+			height: 100%;
+			position: fixed;
+			background-image: url(./folder/pictrue/login.jpg);
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		#main{width: 30%;height: 30%;margin-top: 15%;display: block;position:relative;}
+		.text{
+			height: 20%;
+			width: 50%;
+			font-size:70%;
+			height:2.7em;
+			border-radius:4px;
+			border:1px solid #c8cccf;
+			color:#000;
+			text-align: center;
+			float: right;
+		}
+		
+		#login span{
+			
+			color: #00FFFF;
+			font-family: "微软雅黑";
+			font-size: 20px;
+			margin-right: 20px;
+			
+		}
+		.input-div{
+
+			height: 20%;
+			width: 100%;
+			padding-top: 10px;
+		}
+		.input-center{
+			text-align: center;
+			height: 20%;
+			width: 100%;
+			margin-top: 5%;
+		}
+		.bottom{
+			width: 20%;
+			height:2.7em;
+			border-radius:4px;
+			border:1px solid #c8cccf;
+			background: #ADFF2F;
+			color:#000;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		#login .input-center span{
+			border: none;
+			font-weight: bold;
+			font-size: 32px;
+			color: #00FF00;
+		}
+		#quest{
+			width: 100px;
+			height: 100px;
+			
+			position: relative;
+			top:10%;
+			opacity:1;
+			transition: opacity 2s;
+		}
+		#quest:hover{
+			opacity:0;
+			transition: opacity 2s;
+		}
+		.success{
+			background-image: url(./folder/pictrue/success.png);
+			background-repeat: no-repeat;
+			background-size: 100px 100px;
+			
+		}
+	</style>
+</head>
+<body>
+
+
+	<div id="main">
+		<div id="login">
+			<div class="input-center">
+				<span >登录</span>
+			</div>
+		<form action="" method="post">
+			<div class="input-div">
+				<span>账号:</span><input class="text" id="user" type="text" name="login_user">
+			</div>
+			<div class="input-div">
+				<span>密码:</span><input class="text" id="pass" type="text" name="login_pass">
+			</div>
+			<div class="input-div">
+				<span>验证码:</span><input class="text" id="message" type="text" name="login_pass"><br/>
+				
+			</div>
+			<div class="input-center">
+				<img src="123" width="200px" height="40px" />
+			</div>
+			<div class="input-center">
+				<input class="bottom" type="submit" name="" value="提交">
+			</div>
+		</form>
+		</div>
+	</div>
+<div id="quest" :class="{success:success}">
+	
+</div>
+
+</body>
+<script type="text/javascript" src="./folder/js/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el: '#quest',
+		data: {
+			
+			success: true
+		}
+			})
+	
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$("#quest").css("opacity","0")
+	})
+	// setInterval(function(){
+		
+	// 	alert(succ.height)
+	// },10)
+	
+</script>
+
+
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST','1.txt',true);
+	xhr.onload=function(){
+		if(xhr.status==200&xhr.readyState==4){
+			console.log(this.responseText);
+		}
+		
+	}
+	xhr.send();
+</script>
+
+</html>
